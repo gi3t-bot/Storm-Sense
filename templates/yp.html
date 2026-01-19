@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>DISASTER MANAGEMENT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+</head>
+
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="{% url 'mainpage' %}">DISASTER MANAGEMENT</a>
+        </div>
+        <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="{% url 'mainpage' %}">Home</a></li>
+            <li><a href="https://www.accuweather.com/">Weather Report</a></li>
+            <li><a href="https://www.theweathernetwork.com/maps/current-weather">current news</a></li>
+            <li><a href="{% url 'appmainpage' %}">Storm Sense</a></li>
+        </ul>
+    </nav>
+
+    <!-- One -->
+    <section id="One" class="wrapper style3">
+        <div class="inner">
+            <header class="align-center">
+                <h2>YOUTH PREPAREDNESS</h2>
+            </header>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style2">
+        <div class="inner">
+            <div class="box">
+                <div class="content">
+
+                    <img src="{% static 'yp.png' %}" width="100%" height="500px"><br><br>
+
+                    <h3>Youth Preparedness</h3>
+
+                    <ul>
+                        Emergencies and disasters can happen at any time, often without warning. Disaster planning,
+                        response, and recovery efforts must take into account the unique needs of children.
+                    </ul>
+
+                    <ul>
+                        <li>Get involved in youth preparedness programs.</li>
+                        <li>Download Youth Preparedness resources.</li>
+                        <li>Subscribe to the Children and Disasters Newsletter.</li>
+                        <li>Join FEMA’s Youth Preparedness Council.</li>
+                        <li>Find or start a preparedness program.</li>
+                    </ul>
+
+                    <h3>FEMA's Youth Preparedness Council</h3>
+                    <ul>
+                        <li>Youth leaders collaborate on disaster preparedness projects nationwide.</li>
+                        <li>Prepare with Pedro activity resources.</li>
+                        <li>Free activity book downloads and printed copies.</li>
+                    </ul>
+
+                    <h3>Ready 2 Help</h3>
+                    <ul>
+                        <li>An interactive card game teaching emergency response skills.</li>
+                        <li>Available for download and print.</li>
+                    </ul>
+
+                    <h3>National Strategy for Youth Preparedness Education</h3>
+                    <ul>
+                        <li>Promotes youth preparedness learning programs.</li>
+                        <li>Strengthens partnerships and community engagement.</li>
+                        <li>Integrates preparedness into school curricula.</li>
+                    </ul>
+
+                    <h3>Join the National Strategy Movement</h3>
+                    <ul>
+                        <li>Align your organization with FEMA’s youth preparedness initiatives.</li>
+                    </ul>
+
+                    <h3>Student Tools for Emergency Planning (STEP)</h3>
+                    <ul>
+                        Classroom-based emergency preparedness curriculum for students.
+                    </ul>
+
+                    <h3>STEP Materials Include</h3>
+                    <ul>
+                        <li>Instructor guide</li>
+                        <li>Student activity book</li>
+                        <li>Disaster Dodgers video series</li>
+                    </ul>
+
+                    <h3>Helpful Resources</h3>
+                    <ul>
+                        <li>Youth Preparedness Implementation Guide</li>
+                        <li>Funding Guide for Youth Preparedness Programs</li>
+                        <li>Risk Management Guide</li>
+                    </ul>
+
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/USLHmwvpjX8" title="Education for disaster preparedness" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/OCjl6tp8dnw" title="7 Ways to Survive Natural Disasters" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <ul class="icons">
+                <li><a href="https://www.twitter.com/readygov" class="icon fa-twitter"><span
+                            class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/readygov" class="icon fa-facebook"><span
+                            class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/fema" class="icon fa-instagram"><span
+                            class="label">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/company/fema" class="icon fa-envelope-o"><span
+                            class="label">Email</span></a></li>
+            </ul>
+        </div>
+
+        <div class="copyright">
+            &copy; 2024 Natural Disaster Prediction Hub.<br>
+            Powered by advanced AI and satellite monitoring systems.<br>
+            For emergency situations, always contact local authorities immediately 🚨
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'skel.min.js' %}"></script>
+    <script src="{% static 'util.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+
+</body>
+
+</html>

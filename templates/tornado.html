@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>DISASTER MANAGEMENT</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="{% static 'main.css' %}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body class="subpage">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="logo">
+			<a href="{% url 'mainpage' %}">DISASTER MANAGEMENT</a>
+		</div>
+		<a href="#menu">Menu</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="{% url 'mainpage' %}">Home</a></li>
+			<li><a href="https://www.accuweather.com/">Weather Report</a></li>
+			<li><a href="https://www.theweathernetwork.com/maps/current-weather">current news</a></li>
+			<li><a href="{% url 'appmainpage' %}">Storm Sense</a></li>
+		</ul>
+	</nav>
+
+	<!-- One -->
+	<section id="One" class="wrapper style3">
+		<div class="inner">
+			<header class="align-center">
+				<h2>TORNADO PREPAREDNESS</h2>
+			</header>
+		</div>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="content">
+
+					<img src="{% static 'tornado.jpg' %}" width="100%">
+					<br>
+					<h3>Tornado</h3>
+
+					<p>
+						Tornadoes can destroy buildings, flip cars, and create deadly flying debris. Tornadoes are
+						violently rotating columns of air that extend from a thunderstorm to the ground. Tornadoes can:
+					</p>
+
+					<ul>
+						<h3>Happen anytime and anywhere;</h3>
+						<li>Bring intense winds, over 200 MPH; and</li>
+						<li>Look like funnels.</li>
+					</ul>
+
+					<h3>IF YOU ARE UNDER A TORNADO WARNING, FIND SAFE SHELTER RIGHT AWAY</h3>
+					<ul>
+						<li>If you can safely get to a sturdy building, then do so immediately.</li>
+						<li>Go to a safe room, basement, or storm cellar.</li>
+						<li>If you are in a building with no basement, then get to a small interior room on the lowest
+							level.</li>
+						<li>Stay away from windows, doors, and outside walls.</li>
+						<li>Do not get under an overpass or bridge.</li>
+						<li>Watch out for flying debris.</li>
+						<li>Use your arms to protect your head and neck.</li>
+					</ul>
+
+					<h2>Prepare NOW</h2>
+					<ul>
+						<li>Know your area’s tornado risk.</li>
+						<li>Know the signs of a tornado.</li>
+						<li>Sign up for emergency alerts.</li>
+						<li>Pay attention to weather reports.</li>
+						<li>Identify a safe shelter.</li>
+					</ul>
+
+					<h3>Survive DURING</h3>
+					<ul>
+						<li>Immediately go to a safe location.</li>
+						<li>Shield your head and neck.</li>
+						<li>Do not try to outrun a tornado.</li>
+					</ul>
+
+					<h3>Be Safe AFTER</h3>
+					<ul>
+						<li>Listen for updates.</li>
+						<li>Avoid damaged buildings.</li>
+						<li>Use text messaging if needed.</li>
+					</ul>
+
+					Associated Content
+					<ul>
+						<li><a href="https://www.fema.gov/media-library/assets/documents/162052">Tornado Information
+								Sheet</a></li>
+						<li><a
+								href="http://www.redcross.org/get-help/prepare-for-emergencies/types-of-emergencies/tornado">American
+								Red Cross</a></li>
+					</ul>
+
+					<iframe <iframe width="535" height="400" src="https://www.youtube.com/embed/7KDz6dGQ5RE" title="Watch The Birth of a Tornado | National Geographic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</iframe>
+
+					<iframe <iframe width="535" height="400" src="https://www.youtube.com/embed/_5TiTfuvotc" title="Get Weather Ready: During a Tornado" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</iframe>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="https://www.twitter.com/readygov" class="icon fa-twitter"><span
+							class="label">Twitter</span></a></li>
+				<li><a href="https://www.facebook.com/readygov" class="icon fa-facebook"><span
+							class="label">Facebook</span></a></li>
+				<li><a href="https://www.instagram.com/fema" class="icon fa-instagram"><span
+							class="label">Instagram</span></a></li>
+				<li><a href="https://www.linkedin.com/company/fema" class="icon fa-envelope-o"><span
+							class="label">Email</span></a></li>
+			</ul>
+		</div>
+
+		<div class="copyright">
+			&copy; 2024 Natural Disaster Prediction Hub.<br>
+			Powered by advanced AI and satellite monitoring systems.<br>
+			For emergency situations, always contact local authorities immediately 🚨
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="{% static 'jquery.min.js' %}"></script>
+	<script src="{% static 'jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'skel.min.js' %}"></script>
+	<script src="{% static 'util.js' %}"></script>
+	<script src="{% static 'main.js' %}"></script>
+
+</body>
+
+</html>

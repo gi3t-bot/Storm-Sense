@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Django static CSS -->
+    <link rel="stylesheet" href="{% static 'Style.css' %}" />
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+</head>
+
+<body class="dashboard-page">
+
+    <section id="dashboard" class="dashboard">
+        <h2 class="section-title">Current Risk Assessment</h2>
+
+        <div class="disaster-grid">
+
+            <div class="disaster-card pulse-animation">
+                <div class="disaster-icon">🌊</div>
+                <h3 class="disaster-title">Flood Alert</h3>
+                <span class="risk-level risk-high">HIGH RISK</span>
+                <p>Persistent monsoon rainfall and rising river levels indicate high probability of flooding in
+                    vulnerable regions.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                        style="width: 85%; background: linear-gradient(45deg, #ff4757, #ff3742);"></div>
+                </div>
+                <p><strong>Affected Areas:</strong> <span id="flood-areas">Loading...</span></p>
+            </div>
+
+            <div class="disaster-card">
+                <div class="disaster-icon">🌀</div>
+                <h3 class="disaster-title">Cyclone Watch</h3>
+                <span class="risk-level risk-medium">MEDIUM RISK</span>
+                <p>Tropical disturbance detected over coastal waters. Wind speed and pressure patterns are under
+                    continuous monitoring.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                        style="width: 20%; background: linear-gradient(45deg, #2ed573, #7bed9f);"></div>
+                </div>
+                <p><strong>Affected Areas:</strong> <span id="cyclone-areas">Loading...</span></p>
+            </div>
+
+            <div class="disaster-card">
+                <div class="disaster-icon">🌍</div>
+                <h3 class="disaster-title">Earthquake Risk</h3>
+                <span class="risk-level risk-medium">MEDIUM RISK</span>
+                <p>Minor seismic tremors recorded along tectonic boundaries. No major event detected, monitoring
+                    continues.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                        style="width: 45%; background: linear-gradient(45deg, #ffa502, #ff6348);"></div>
+                </div>
+                <p><strong>Affected Areas:</strong> <span id="earthquake-areas">Loading...</span></p>
+            </div>
+
+            <div class="disaster-card">
+                <div class="disaster-icon">🌡️</div>
+                <h3 class="disaster-title">Heatwave Warning</h3>
+                <span class="risk-level risk-high">HIGH RISK</span>
+                <p>Prolonged high temperatures and dry conditions significantly increase heat-related health risks.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                        style="width: 20%; background: linear-gradient(45deg, #2ed573, #7bed9f);"></div>
+                </div>
+                <p><strong>Affected Areas:</strong> <span id="heatwave-areas">Loading...</span></p>
+            </div>
+
+            <div class="disaster-card">
+                <div class="disaster-icon">🌾</div>
+                <h3 class="disaster-title">Drought Risk</h3>
+                <span class="risk-level risk-medium">MEDIUM RISK</span>
+                <p>Below-average rainfall and declining groundwater levels may impact agriculture and water
+                    availability.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                        style="width: 50%; background: linear-gradient(45deg, #ffa502, #ff6348);"></div>
+                </div>
+                <p><strong>Affected Areas:</strong> <span id="drought-areas">Loading...</span></p>
+            </div>
+
+            <div class="disaster-card">
+                <div class="disaster-icon">⛰️</div>
+                <h3 class="disaster-title">Landslide Alert</h3>
+                <span class="risk-level risk-high">HIGH RISK</span>
+                <p>Continuous rainfall in hilly terrain increases slope instability and chances of landslides.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                        style="width: 82%; background: linear-gradient(45deg, #ff4757, #ff3742);"></div>
+                </div>
+                <p><strong>Affected Areas:</strong> <span id="landslide-areas">Loading...</span></p>
+            </div>
+
+            <div class="disaster-card">
+                <div class="disaster-icon">🔥</div>
+                <h3 class="disaster-title">Wildfire Risk</h3>
+                <span class="risk-level risk-medium">MEDIUM RISK</span>
+                <p>Dry vegetation and rising temperatures create favorable conditions for forest fire outbreaks.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                        style="width: 60%; background: linear-gradient(45deg, #ffa502, #ff6348);"></div>
+                </div>
+                <p><strong>Affected Areas:</strong> <span id="wildfire-areas">Loading...</span></p>
+            </div>
+
+            <div class="disaster-card">
+                <div class="disaster-icon">🌊</div>
+                <h3 class="disaster-title">Tsunami Watch</h3>
+                <span class="risk-level risk-low">LOW RISK</span>
+                <p>No immediate threat detected. Oceanic seismic activity is being closely monitored.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"
+                        style="width: 20%; background: linear-gradient(45deg, #2ed573, #7bed9f);"></div>
+                </div>
+                <p><strong>Affected Areas:</strong> <span id="tsunami-areas">Loading...</span></p>
+            </div>
+
+        </div>
+
+        <div class="map-page-container">
+            <div id="india-map"></div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="alerts-count">5</div>
+                <p>Active Alerts</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="regions-monitored">18</div>
+                <p>Regions Monitored</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="accuracy-rate">58%</div>
+                <p>Prediction Accuracy</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="data-points">65</div>
+                <p>Data Points/Hour</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Django static JS -->
+    <script src="{% static 'Script.js' %}"></script>
+
+    <script>
+        // 🔹 Make map global so Script.js can access it
+        window.map = L.map('india-map', {
+            zoomControl: true,
+            attributionControl: false
+        }).setView([22.9734, 78.6569], 5);
+
+        L.tileLayer(
+            'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+            { maxZoom: 18 }
+        ).addTo(window.map);
+
+
+    </script>
+
+
+</body>
+
+</html>

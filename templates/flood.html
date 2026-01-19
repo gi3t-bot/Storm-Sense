@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+    Hielo by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license
+-->
+<html>
+
+<head>
+    <title>DISASTER MANAGEMENT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="{% url 'mainpage' %}">DISASTER MANAGEMENT</a>
+        </div>
+        <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="{% url 'mainpage' %}">Home</a></li>
+            <li><a href="https://www.accuweather.com/">Weather Report</a></li>
+            <li><a href="https://www.theweathernetwork.com/maps/current-weather">Current News</a></li>
+            <li><a href="{% url 'appmainpage' %}">Storm Sense</a></li>
+        </ul>
+    </nav>
+
+    <!-- One -->
+    <section id="One" class="wrapper style3">
+        <div class="inner">
+            <header class="align-center">
+                <h2>FLOOD PREPARATION</h2>
+            </header>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style2">
+        <div class="inner">
+            <div class="box">
+                <div class="content">
+
+                    <img src="{% static 'flood.png' %}" width="100%" height="500px"><br><br>
+
+                    <h3>Floods</h3>
+                    Failing to evacuate flooded areas, entering flood waters, or remaining after a flood has passed can
+                    result in injury or death. Flooding is a temporary overflow of water onto land that is normally dry.
+                    Floods may:
+                    <ul>
+                        <li>Result from rain, snow, coastal storms, storm surges, and dam failures.</li>
+                        <li>Develop slowly or rapidly, flash floods may occur without warning.</li>
+                        <li>Cause outages, disrupt transportation, and damage buildings.</li>
+                    </ul>
+
+                    <h3>IF YOU ARE UNDER A FLOOD WARNING, FIND SAFE SHELTER RIGHT AWAY</h3>
+                    <ul>
+                        <li>Do not walk, swim, or drive through flood waters.</li>
+                        <li>Six inches of water can knock you down.</li>
+                        <li>One foot of moving water can sweep a vehicle away.</li>
+                        <li>Stay off bridges over fast-moving water.</li>
+                        <li>Determine the safest action for your situation.</li>
+                        <li>Evacuate if told to do so.</li>
+                        <li>Move to higher ground.</li>
+                    </ul>
+
+                    <h3>Prepare NOW</h3>
+                    <ul>
+                        <li>Know flood risks in your area.</li>
+                        <li>Sign up for emergency alerts.</li>
+                        <li>Monitor heavy rainfall.</li>
+                        <li>Practice evacuation routes.</li>
+                        <li>Prepare emergency supplies.</li>
+                        <li>Purchase flood insurance.</li>
+                        <li>Protect important documents.</li>
+                        <li>Protect your property.</li>
+                    </ul>
+
+                    <h3>SURVIVE DURING</h3>
+                    <ul>
+                        <li>Go to your identified safe location.</li>
+                        <li>Evacuate immediately if ordered.</li>
+                        <li>Follow official alerts.</li>
+                        <li>Turn Around, Don’t Drown!</li>
+                        <li>Stay off bridges.</li>
+                        <li>If trapped in a vehicle, stay inside.</li>
+                        <li>If trapped in a building, go to the highest level.</li>
+                    </ul>
+
+                    <h3>Be Safe AFTER</h3>
+                    <ul>
+                        <li>Return home only when authorities say it is safe.</li>
+                        <li>Avoid driving unless necessary.</li>
+                        <li>Beware of wildlife and debris.</li>
+                        <li>Avoid electrical hazards.</li>
+                        <li>Avoid contaminated floodwater.</li>
+                        <li>Use generators outdoors only.</li>
+                    </ul>
+
+                    <h3>Associated Content</h3>
+                    <ul>
+                        <li><a href="https://www.ready.gov/floods">Flood Safety Toolkit</a></li>
+                        <li><a href="https://www.fema.gov/flood-insurance">Flood Information Sheet</a></li>
+                        <li><a href="https://www.weather.gov/safety/flood">National Weather Service Flood Safety</a>
+                        </li>
+                    </ul>
+
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/4PXj7bOD7IY" title="Floods 101 | National Geographic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/rV1iqRD9EKY" title="How to Survive a Flood" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <ul class="icons">
+                <li><a href="https://www.twitter.com/readygov" class="icon fa-twitter"><span
+                            class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/readygov" class="icon fa-facebook"><span
+                            class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/fema" class="icon fa-instagram"><span
+                            class="label">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/company/fema" class="icon fa-envelope-o"><span
+                            class="label">Email</span></a></li>
+            </ul>
+        </div>
+
+        <div class="copyright">
+            &copy; 2024 Natural Disaster Prediction Hub.<br>
+            Powered by advanced AI and satellite monitoring systems.<br>
+            For emergency situations, always contact local authorities immediately 🚨
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'skel.min.js' %}"></script>
+    <script src="{% static 'util.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+
+</body>
+
+</html>

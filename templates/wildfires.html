@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+    Hielo by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license
+-->
+<html>
+
+<head>
+    <title>DISASTER MANAGEMENT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="{% url 'mainpage' %}">DISASTER MANAGEMENT</a>
+        </div>
+        <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="{% url 'mainpage' %}">Home</a></li>
+            <li><a href="https://www.accuweather.com/">Weather Report</a></li>
+            <li><a href="https://www.theweathernetwork.com/maps/current-weather">current news</a></li>
+            <li><a href="{% url 'wildfires' %}">Storm Sense</a></li>
+        </ul>
+    </nav>
+
+    <!-- One -->
+    <section id="One" class="wrapper style3">
+        <div class="inner">
+            <header class="align-center">
+                <h2>WILDFIRES PREPARATION</h2>
+            </header>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style2">
+        <div class="inner">
+            <div class="box">
+                <div class="content">
+
+                    <img src="{% static 'wildfires.png' %}" width="100%" height="500px"><br><br>
+
+                    <h3>Wildfires</h3>
+
+                    Wildfires can ruin homes and cause injuries or death to people and animals. A wildfire is an
+                    unplanned fire that burns in a natural area such as a forest, grassland, or prairie. Wildfires can:
+                    <ul>
+                        <li>Often be caused by humans or lightning.</li>
+                        <li>Cause flooding or disrupt transportation, gas, power, and communications.</li>
+                        <li>Happen anywhere, anytime.</li>
+                        <li>Cost governments billions each year.</li>
+                    </ul>
+
+                    <h3>IF YOU ARE UNDER A WILDFIRE WARNING, GET TO SAFETY RIGHT AWAY</h3>
+                    <ul>
+                        <li>Leave immediately if told to do so.</li>
+                        <li>Listen for emergency alerts.</li>
+                        <li>Use N95 masks to protect breathing.</li>
+                    </ul>
+
+                    <h3>Prepare NOW</h3>
+                    <ul>
+                        <li>Sign up for emergency alerts.</li>
+                        <li>Know evacuation routes.</li>
+                        <li>Prepare emergency supplies.</li>
+                        <li>Seal rooms from outside air.</li>
+                        <li>Store important documents safely.</li>
+                        <li>Use fire-resistant materials.</li>
+                        <li>Maintain water sources.</li>
+                        <li>Create defensible space around your home.</li>
+                        <li>Review insurance coverage.</li>
+                        <li>Monitor air quality alerts.</li>
+                    </ul>
+
+                    <h3>Survive DURING</h3>
+                    <ul>
+                        <li>Evacuate immediately if ordered.</li>
+                        <li>If trapped, call emergency services.</li>
+                        <li>Follow official instructions.</li>
+                        <li>Wear respiratory protection.</li>
+                        <li>Stay indoors if smoke is present.</li>
+                    </ul>
+
+                    <h3>Be Safe AFTER</h3>
+                    <ul>
+                        <li>Return only when authorities say it is safe.</li>
+                        <li>Avoid hot ash and smoldering debris.</li>
+                        <li>Use messages instead of calls.</li>
+                        <li>Wear protective gear during cleanup.</li>
+                        <li>Document property damage.</li>
+                        <li>Watch for flooding risks after fires.</li>
+                    </ul>
+
+                    <h3>Associated Content</h3>
+                    <ul>
+                        <li><a href="https://www.ready.gov/wildfires">Wildfire Safety Toolkit</a></li>
+                        <li><a href="https://www.fema.gov/emergency-managers/risk-management/wildfire">Wildfire
+                                Information Sheet</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=5hghT1W33cY">Cloud of Smoke (Video)</a></li>
+                        <li><a href="https://www.cdc.gov/air/wildfire-smoke">Fires and Your Health</a></li>
+                    </ul>
+
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/5hghT1W33cY"
+                        title="Wildfires 101 | National Geographic" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/9EprnWrMNpw"
+                        title="How Wildfires Spread | IMR" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="container">
+                <ul class="icons">
+                    <li><a href="https://www.twitter.com/readygov" class="icon fa-twitter"><span
+                                class="label">Twitter</span></a></li>
+                    <li><a href="https://www.facebook.com/readygov" class="icon fa-facebook"><span
+                                class="label">Facebook</span></a></li>
+                    <li><a href="https://www.instagram.com/fema" class="icon fa-instagram"><span
+                                class="label">Instagram</span></a></li>
+                    <li><a href="https://www.linkedin.com/company/fema" class="icon fa-envelope-o"><span
+                                class="label">Email</span></a></li>
+                </ul>
+            </div>
+
+            <div class="copyright">
+                &copy; 2024 Natural Disaster Prediction Hub.<br>
+                Powered by advanced AI and satellite monitoring systems.<br>
+                For emergency situations, always contact local authorities immediately 🚨
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{% static 'jquery.min.js' %}"></script>
+        <script src="{% static 'jquery.scrollex.min.js' %}"></script>
+        <script src="{% static 'skel.min.js' %}"></script>
+        <script src="{% static 'util.js' %}"></script>
+        <script src="{% static 'main.js' %}"></script>
+
+</body>
+
+</html>

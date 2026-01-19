@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+    Hielo by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license
+-->
+<html>
+
+<head>
+    <title>DISASTER MANAGEMENT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="{% url 'mainpage' %}">DISASTER MANAGEMENT</a>
+        </div>
+        <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="{% url 'mainpage' %}">Home</a></li>
+            <li><a href="https://www.accuweather.com/">Weather Report</a></li>
+            <li><a href="https://www.theweathernetwork.com/maps/current-weather">Current News</a></li>
+            <li><a href="{% url 'appmainpage' %}">Storm Sense</a></li>
+        </ul>
+    </nav>
+
+    <!-- One -->
+    <section id="One" class="wrapper style3">
+        <div class="inner">
+            <header class="align-center">
+                <h2>TSUNAMI PREPARATION</h2>
+            </header>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style2">
+        <div class="inner">
+            <div class="box">
+                <div class="content">
+
+                    <img src="{% static 'tsunami.png' %}" width="100%" height="700px"><br><br>
+
+                    A tsunami can kill or injure people and damage or destroy buildings and infrastructure as waves come
+                    in and go out. A tsunami is a series of enormous ocean waves caused by earthquakes, underwater
+                    landslides, volcanic eruptions, or asteroids. Tsunamis can:
+                    <ul>
+                        <li>Travel 20–30 miles per hour with waves 10–100 feet high.</li>
+                        <li>Cause flooding and disrupt transportation, power, communications, and water supply.</li>
+                        <li>Happen anywhere along U.S. coasts, especially the Pacific and Caribbean.</li>
+                    </ul>
+
+                    <h3>IF YOU ARE UNDER A TSUNAMI WARNING:</h3>
+                    <ul>
+                        <li>First protect yourself from an earthquake. Drop, Cover, and Hold On.</li>
+                        <li>Move to high ground as far inland as possible.</li>
+                        <li>Watch for natural tsunami signs.</li>
+                        <li>Listen to emergency alerts.</li>
+                        <li>Evacuate immediately. Do not wait.</li>
+                        <li>If in a boat, go out to sea.</li>
+                    </ul>
+
+                    <h3>Prepare NOW</h3>
+                    <ul>
+                        <li>Learn tsunami risks in coastal areas.</li>
+                        <li>Know warning signs.</li>
+                        <li>Practice evacuation routes.</li>
+                        <li>Create a family communication plan.</li>
+                        <li>Sign up for warning systems.</li>
+                        <li>Consider flood and earthquake insurance.</li>
+                    </ul>
+
+                    <h3>Survive DURING</h3>
+                    <ul>
+                        <li>Protect yourself during earthquakes.</li>
+                        <li>Move immediately to higher ground after shaking stops.</li>
+                        <li>Follow evacuation routes.</li>
+                        <li>Float on debris if in water.</li>
+                        <li>Head out to sea if already on a boat.</li>
+                    </ul>
+
+                    <h3>Be Safe AFTER</h3>
+                    <ul>
+                        <li>Listen to local authorities.</li>
+                        <li>Avoid floodwaters and damaged structures.</li>
+                        <li>Watch for electrical hazards.</li>
+                        <li>Document property damage.</li>
+                        <li>Use texts instead of calls.</li>
+                    </ul>
+
+                    <h3>Associated Content</h3>
+                    <ul>
+                        <li><a href="https://www.fema.gov/media-library/assets/documents/162057">Tsunami Information
+                                Sheet</a></li>
+                        <li><a href="http://www.tsunami.gov/">NOAA Tsunami Program</a></li>
+                        <li><a href="http://www.redcross.org/prepare/disaster/tsunami">American Red Cross</a></li>
+                        <li><a href="http://walrus.wr.usgs.gov/tsunami/">USGS Tsunami Center</a></li>
+                    </ul>
+
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/7EDflnGzjTY"
+                        title="How to Survive a Tsunami, According to Science" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/oWzdgBNfhQU"
+                        title="Rare Video: Japan Tsunami | National Geographic" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <ul class="icons">
+                <li><a href="https://www.twitter.com/readygov" class="icon fa-twitter"><span
+                            class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/readygov" class="icon fa-facebook"><span
+                            class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/fema" class="icon fa-instagram"><span
+                            class="label">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/company/fema" class="icon fa-envelope-o"><span
+                            class="label">Email</span></a></li>
+            </ul>
+        </div>
+
+        <div class="copyright">
+            &copy; 2024 Natural Disaster Prediction Hub.<br>
+            Powered by advanced AI and satellite monitoring systems.<br>
+            For emergency situations, always contact local authorities immediately 🚨
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'skel.min.js' %}"></script>
+    <script src="{% static 'util.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+
+</body>
+
+</html>

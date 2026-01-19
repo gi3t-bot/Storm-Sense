@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STORM SENSE</title>
+
+    <!-- Small safety rule for preloader -->
+    <style>
+        #preloader {
+            pointer-events: none;
+        }
+    </style>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="{% static 'Style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <!-- {% include "header.html" %} -->
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <h1>STORM SENSE</h1>
+            <div class="preloader-loader"></div>
+        </div>
+    </div>
+
+    <!-- Page wrapper for nicer centering -->
+    <div class="page-wrap">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>STORM SENSE</h1>
+                <p>
+                    A Computationally Intelligent System for Predictive Weather Modeling
+                    and Adaptive Disaster Risk Mitigation Using Machine Learning
+                </p>
+                <div class="hero-cta-wrap">
+                    <a href="{% url 'dashboard' %}" class="cta-button">
+                        View Live Predictions
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather update -->
+        <div class="app" id="app">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Search city..." />
+                <button type="button" onclick="searchCity()">Search</button>
+            </div>
+
+            <div class="weather-box">
+                <h2 id="location">Loading...</h2>
+                <img id="icon" src="" alt="Weather icon" />
+                <p class="info" id="condition">Condition</p>
+                <p class="info" id="temperature">Temperature</p>
+                <p class="info" id="humidity">Humidity</p>
+                <p class="info" id="wind">Wind</p>
+            </div>
+
+            <div class="alert" id="alertBox"></div>
+        </div>
+
+
+        <!-- Footer -->
+        <!-- {% include "footer.html" %} -->
+
+        <!-- Static JS -->
+        <script src="{% static 'Script.js' %}"></script>
+
+        <!-- Remove preloader after load -->
+        <script>
+            window.addEventListener("load", function () {
+                const preloader = document.getElementById("preloader");
+                if (preloader) {
+                    preloader.remove();
+                }
+            });
+        </script>
+
+</body>
+
+</html>

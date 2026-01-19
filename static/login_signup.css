@@ -1,0 +1,145 @@
+/* --- Global & Body Styles (Matching Storm Sense Project) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Use a professional font */
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+:root {
+    --color-primary: #ff4747; /* Red accent from your project's preloader/risk */
+    --color-secondary: #5551f7; /* Blue accent from your project's buttons */
+    --color-background-dark: #111114;
+    --color-form-bg: #191c28;
+    --color-text-main: #f5f8fa;
+    --color-text-subtle: #a0a0a0;
+    --color-error: #ff5659;
+}
+
+body { 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Pure CSS background matching project aesthetic (no external image dependency) */
+    background: linear-gradient(135deg, #212c47 0%, var(--color-background-dark) 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- Container (Glassmorphism Effect) --- */
+.container { 
+    max-width: 420px;
+    width: 90%;
+    padding: 40px;
+    margin: 50px auto;
+    z-index: 10;
+    position: relative;
+    
+    /* Glassmorphism/Frosted Glass Look */
+    background: rgba(25, 28, 40, 0.7); /* Slightly translucent dark background */
+    backdrop-filter: blur(12px); /* Stronger blur */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 50px rgba(85, 81, 247, 0.1);
+    
+    /* Initial state for slide-in animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Typography and Form Titles --- */
+.form-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: var(--color-primary); /* Use red accent for the main title */
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 71, 71, 0.3);
+}
+
+#loginForm, #signupForm {
+    color: var(--color-text-main);
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-text-subtle);
+}
+
+/* --- Input Fields --- */
+input[type="email"], input[type="password"] { 
+    width: 100%; 
+    padding: 12px 15px; 
+    margin-bottom: 25px; 
+    border-radius: 8px; 
+    border: 1px solid #444856; 
+    background: var(--color-form-bg); /* Dark input background */
+    color: var(--color-text-main);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+    transition: border 0.3s;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border: 1px solid var(--color-secondary);
+    box-shadow: 0 0 10px rgba(85, 81, 247, 0.5); /* Glowing focus effect */
+}
+
+/* --- Button --- */
+.btn { 
+    background: linear-gradient(90deg, var(--color-secondary), #39c3ed);
+    color: var(--color-text-main);
+    padding: 12px 0; 
+    border: none; 
+    width: 100%; 
+    border-radius: 8px; 
+    font-weight: 700; 
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(85, 81, 247, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(85, 81, 247, 0.6);
+}
+
+/* --- Toggle Link & Error Message --- */
+.toggle-link { 
+    text-align: center; /* Center the link */
+    display: block; 
+    margin-top: 20px;
+    color: var(--color-secondary); 
+    cursor: pointer; 
+    font-size: 0.95rem;
+    text-decoration: none; /* Removed default underline */
+}
+
+.toggle-link:hover {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+.error { 
+    color: var(--color-error); 
+    font-size: 0.95em;
+    text-align: center;
+    margin-top: 15px;
+}

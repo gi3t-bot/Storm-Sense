@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>DISASTER MANAGEMENT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Font Awesome (required for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Your main CSS -->
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+</head>
+
+
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="{% url 'mainpage' %}">DISASTER MANAGEMENT</a>
+        </div>
+        <a href="#">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="{% url 'mainpage' %}">Home</a></li>
+            <li><a href="https://www.accuweather.com/">Weather Report</a></li>
+            <li><a href="https://www.theweathernetwork.com/maps/current-weather">current news</a></li>
+            <li><a href="{% url 'appmainpage' %}">Storm Sense</a></li>
+        </ul>
+    </nav>
+
+    <!-- One -->
+    <section id="One" class="wrapper style3">
+        <div class="inner">
+            <header class="align-center">
+                <h2>FINANCIAL PREPAREDNESS</h2>
+            </header>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style2">
+        <div class="inner">
+            <div class="box">
+                <div class="content">
+
+                    <img src="{% static 'fpre.jpg' %}" width="100%" height="500px"><br><br>
+
+                    <h3>Financial Preparedness</h3>
+                    <ul>
+                        <li>Collect and secure critical financial, insurance, medical, and personal records to speed
+                            recovery after disasters.</li>
+                        <li>Gather financial and critical personal, household, and medical information.</li>
+                        <li>Maintain an emergency savings fund and keep small bills at home.</li>
+                        <li>Review property, health, life, and flood insurance coverage.</li>
+                        <li>Download and use the Emergency Financial First Aid Kit (EFFAK).</li>
+                    </ul>
+
+                    <h3>For Organizations</h3>
+                    <ul>
+                        <li>Host preparedness meetings.</li>
+                        <li>Share EFFAK resources during staff sessions.</li>
+                        <li>Include preparedness tips in newsletters.</li>
+                    </ul>
+
+                    <h3>At Home</h3>
+                    <ul>
+                        <li>Store documents securely in cloud, external drives, or safety deposit boxes.</li>
+                        <li>Safeguard medical and financial records.</li>
+                    </ul>
+
+                    <h3>Household Identification</h3>
+                    <ul>
+                        <li>Photo IDs</li>
+                        <li>Birth certificates</li>
+                        <li>Social security cards</li>
+                        <li>Military service records</li>
+                        <li>Pet identification</li>
+                    </ul>
+
+                    <h3>Financial and Legal Documentation</h3>
+                    <ul>
+                        <li>Housing and payment records</li>
+                        <li>Insurance policies</li>
+                        <li>Income sources</li>
+                        <li>Tax statements</li>
+                    </ul>
+
+                    <h3>Medical Information</h3>
+                    <ul>
+                        <li>Physician contacts</li>
+                        <li>Health insurance details</li>
+                        <li>Immunization records</li>
+                        <li>Medication lists</li>
+                    </ul>
+
+                    <h3>Insurance Information</h3>
+                    <ul>
+                        <li>Document and insure home and business property.</li>
+                    </ul>
+
+                    <h3>Household Contact Information</h3>
+                    <ul>
+                        <li>Banks</li>
+                        <li>Insurance agents</li>
+                        <li>Healthcare providers</li>
+                        <li>Service providers</li>
+                        <li>Places of worship</li>
+                    </ul>
+
+                    <h3>Get Your Benefits Electronically</h3>
+                    <ul>
+                        <li>Switch to electronic payments for federal benefits.</li>
+                        <li>Direct deposit to bank accounts.</li>
+                        <li>Direct Express® prepaid debit card.</li>
+                    </ul>
+
+                    <h3>Associated Content</h3>
+                    <ul>
+                        <li><a href="https://www.ready.gov/financial-preparedness">Financial Preparedness Toolkit</a>
+                        </li>
+                        <li><a
+                                href="https://www.fema.gov/emergency-managers/individuals-communities/emergency-financial-first-aid-kit">Emergency
+                                Financial First Aid Kit (EFFAK)</a></li>
+                    </ul>
+
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/RpnFDCCfS8I"
+                        title="Financial Preparedness - Are You Prepared?" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <iframe width="535" height="400" src="https://www.youtube.com/embed/O8EL6CeMmLM"
+                        title="The 7 Steps to Financial Preparedness | Dr. Arthur T Bradley PhD" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <ul class="icons">
+                <li><a href="https://www.twitter.com/readygov" class="icon fa-twitter"><span
+                            class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/readygov" class="icon fa-facebook"><span
+                            class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/fema" class="icon fa-instagram"><span
+                            class="label">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/company/fema" class="icon fa-envelope-o"><span
+                            class="label">Email</span></a></li>
+            </ul>
+        </div>
+
+        <div class="copyright">
+            &copy; 2024 Natural Disaster Prediction Hub.<br>
+            Powered by advanced AI and satellite monitoring systems.<br>
+            For emergency situations, always contact local authorities immediately 🚨
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'skel.min.js' %}"></script>
+    <script src="{% static 'util.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+
+</body>
+
+</html>

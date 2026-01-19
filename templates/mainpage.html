@@ -1,0 +1,310 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>DISASTER MANAGEMENT</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="{% static 'main.css' %}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+
+	{% include "header.html" %}
+
+
+	<!-- Banner -->
+	<section class="banner full">
+		<article>
+			<img src="{% static 'slide01.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>A Free and Disaster Prevention Web-App by <a href="https://">Group-22</a></p>
+					<h2>Storm Sense</h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'slide02.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Take Preventive Measures To Save Life</p>
+					<h2>BE SAFE</h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'floodr.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Save others when you are safe</p>
+					<h2>HELP OTHERS</h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'cloudburst.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Natural disaster can come any time</p>
+					<h2>BE PREPARED</h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'slide05.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Enjoy the nature, don't let it harm you :)</p>
+					<h2>NATURE IS GIFT OF GOD</h2>
+				</header>
+			</div>
+		</article>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="grid-style">
+
+
+
+				<!-- Tornado -->
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="{% static 'tornado.jpg' %}" alt="" />
+						</div>
+						<div class="content">
+							<header class="align-center">
+								<p>Big funnel</p>
+								<h2>TORNADO</h2>
+							</header>
+							<p> A tornado is a rapidly rotating column of air that is in contact with both the surface
+								of the Earth and a cumulonimbus cloud or, in rare cases, the base of a cumulus
+								cloud.Most tornadoes have wind speeds less than 110 miles per hour (180 km/h)</p>
+							<footer class="align-center">
+								<a href="{% url 'tornado' %}" class="button alt">Learn More</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- Hurricane -->
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="{% static 'cyclone.jpg' %}" alt="" />
+						</div>
+						<div class="content">
+							<header class="align-center">
+								<p>Big Eye</p>
+								<h2>HURRICANE</h2>
+							</header>
+							<p> In meteorology, a hurricane is a large scale air mass that rotates around a strong
+								center of low atmospheric pressure.Hurricanes are characterized by inward spiraling
+								winds that rotate about a zone of low pressure.</p>
+							<footer class="align-center">
+								<a href="{% url 'hurricane' %}" class="button alt">Learn More</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- two -->
+	<section id="two" class="wrapper style3">
+		<div class="inner">
+			<header class="align-center">
+				<p>We cannot stop natural disasters but we can arm ourselves with knowledge</p>
+				<h2>soo many lives wouldn't have to be lost if there was enough disaster preparedness</h2>
+			</header>
+		</div>
+	</section>
+
+
+
+	<!-- Three -->
+	<section id="three" class="wrapper style2">
+		<div class="inner">
+			<header class="align-center">
+				<p class="special">Nature is Beautiful but it can be Disasterous sometimes</p>
+				<h2>Knowledge about Worse is Good</h2>
+			</header>
+			<div class="gallery">
+
+
+				<!-- Tsunami -->
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="{% static 'tsunami.png' %}" alt="" />
+						</div>
+						<div class="content">
+							<header class="align-center">
+								<h2>TSUNAMI</h2>
+							</header>
+							<p>
+								A tsunami is an ocean wave triggered by large earthquakes that occur near or under the
+								ocean, volcanic eruptions, submarine landslides, or by onshore landslides in which large
+								volumes of debris fall into the water.
+							</p>
+							<footer class="align-center">
+								<a href="{% url 'tsunami' %}" class="button alt">Learn More</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- Earthquake -->
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="/static/earthquake.jpg" alt="" height="300px" />
+						</div>
+						<div class="content">
+							<header class="align-center">
+								<h2>EARTHQUAKE</h2>
+							</header>
+							<p>
+								What is an earthquake? An earthquake is the sudden release of strain energy in the
+								Earth's crust, resulting in waves of shaking that radiate outwards from the earthquake
+								source. When two blocks of the earth suddenly slip past one another.
+							</p>
+							<footer class="align-center">
+								<a href="{% url 'avalanche' %}" class="button alt">Learn More</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- Flood -->
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="/static/flood.png" alt="" height="300px" />
+						</div>
+						<div class="content">
+							<header class="align-center">
+								<h2>FLOOD</h2>
+							</header>
+							<p>
+								A flood is an overflow of water that submerges normally dry land, occurring when water
+								levels in rivers, lakes, or oceans rise beyond their usual limits, often due to heavy
+								rain, snowmelt, or dam failures, causing significant damage and displacement.
+							</p>
+							<footer class="align-center">
+								<a href="{% url 'flood' %}" class="button alt">Learn More</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- Wildfires -->
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="/static/wildfires.png" alt="" height="300px" />
+						</div>
+						<div class="content">
+							<header class="align-center">
+								<h2>WILDFIRES</h2>
+							</header>
+							<p>
+								Wildfires (also known as bushfires, brush fires or forest fires) are large, uncontrolled
+								and potentially destructive fires that can affect both rural and urban areas. They can
+								spread quickly, change direction and even jump across large distances.
+							</p>
+							<footer class="align-center">
+								<a href="{% url 'wildfires' %}" class="button alt">Learn More</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+				<!-- Financial preparedness -->
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="/static/fpre.jpg" alt="" height="300px" />
+						</div>
+						<div class="content">
+							<header class="align-center">
+								<h2>FINANCIAL PREPAREDNESS</h2>
+							</header>
+							<p>
+								Financial preparedness is the proactive act of creating a financial safety net and plan
+								to manage unexpected life events, like job loss or disasters, ensuring you can cover
+								basic needs, maintain stability, and recover without falling into severe debt.
+							</p>
+							<footer class="align-center">
+								<a href="{% url 'fp' %}" class="button alt">Learn More</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Youth preparedness -->
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="/static/yp.png" alt="" height="300px" />
+						</div>
+						<div class="content">
+							<header class="align-center">
+								<h2>YOUTH PREPAREDNESS</h2>
+							</header>
+							<p>
+								Youth preparedness involves teaching children and teens essential skills and knowledge
+								to prepare for, respond to, and recover from disasters, empowering them to be resilient
+								and actively support their families and communities.
+							</p>
+							<footer class="align-center">
+								<a href="{% url 'yp' %}" class="button alt">Learn More</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Footer -->
+	{% include "footer.html" %}
+
+
+	<!-- Scripts -->
+	<script src="/static/jquery.min.js"></script>
+	<!-- <script src="assets/js/google.js"></script> -->
+	<script src="/static/jquery.scrollex.min.js"></script>
+	<script src="/static/skel.min.js"></script>
+	<script src="/static/util.js"></script>
+	<script src="/static/main.js"></script>
+
+</body>
+
+</html>
