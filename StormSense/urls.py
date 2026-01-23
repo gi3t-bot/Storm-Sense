@@ -16,7 +16,7 @@ from .views import (
     wildfires_view,
     yp_view,
     fp_view,
-    predict_earthquake_view   # ← THIS WAS MISSING
+    predict_earthquake_view
 )
 
 urlpatterns = [

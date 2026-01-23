@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'StormSense',   # REQUIRED for your current structure
+    'StormSense',
 ]
 
 
@@ -48,7 +48,7 @@ ROOT_URLCONF = 'StormSense.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],   # FIXED
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -59,6 +59,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 # it handles how our server works...all the settings of the server
 WSGI_APPLICATION = 'StormSense.wsgi.application'
