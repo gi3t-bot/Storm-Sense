@@ -102,6 +102,18 @@ function loadDisasterRisk() {
         .then(data => {
             updateDashboard(data);
             updateMapWithRiskData(data.state_risks || {});
+            
+            if (data.dashboard_stats) {
+                const alertsEl = document.getElementById("alerts-count");
+                const regionsEl = document.getElementById("regions-monitored");
+                const accuracyEl = document.getElementById("accuracy-rate");
+                const dataPointsEl = document.getElementById("data-points");
+                
+                if (alertsEl) alertsEl.textContent = data.dashboard_stats.active_alerts;
+                if (regionsEl) regionsEl.textContent = data.dashboard_stats.regions_monitored;
+                if (accuracyEl) accuracyEl.textContent = data.dashboard_stats.accuracy_rate;
+                if (dataPointsEl) dataPointsEl.textContent = data.dashboard_stats.data_points;
+            }
         })
         .catch(err => console.error("Risk API error:", err));
 }
