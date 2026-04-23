@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STORM SENSE</title>
 
-    <!-- Small safety rule for preloader -->
+    
     <style>
         #preloader {
             pointer-events: none;
         }
     </style>
 
-    <!-- Main stylesheet -->
+    
     <link rel="stylesheet" href="{% static 'Style.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <!-- Fonts -->
+    
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
 </head>
 
@@ -26,7 +26,7 @@
 
 
 
-    <!-- Preloader -->
+    
     <div id="preloader">
         <div class="preloader-content">
             <h1>STORM SENSE</h1>
@@ -34,9 +34,9 @@
         </div>
     </div>
 
-    <!-- Page wrapper for nicer centering -->
+    
     <div class="page-wrap">
-        <!-- Hero Section -->
+        
         <section class="hero">
             <div class="hero-content">
                 <h1>STORM SENSE</h1>
@@ -52,7 +52,7 @@
             </div>
         </section>
 
-        <!-- Weather update -->
+        
         <div class="app" id="app">
             <div class="search-box">
                 <input type="text" id="cityInput" placeholder="Search city..." />
@@ -73,10 +73,10 @@
 
 
 
-        <!-- Static JS -->
+        
         <script src="{% static 'Script.js' %}"></script>
 
-        <!-- Remove preloader after load -->
+        
         <script>
             window.addEventListener("load", function () {
                 const preloader = document.getElementById("preloader");

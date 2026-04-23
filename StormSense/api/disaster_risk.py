@@ -2,11 +2,8 @@ import requests
 import random
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from StormSense.ml.predictor import estimate_magnitude_trend
-
 OPENWEATHER_API_KEY = "12f6fd13ed1526d19b7f18c491fe721f"
-
 INDIA_COORDS = [
-    # States
     ("Andhra Pradesh",         15.9129, 79.7400),
     ("Arunachal Pradesh",      28.2180, 94.7278),
     ("Assam",                  26.2006, 92.9376),
@@ -35,7 +32,6 @@ INDIA_COORDS = [
     ("Uttar Pradesh",          26.8467, 80.9462),
     ("Uttarakhand",            30.0668, 79.0193),
     ("West Bengal",            22.9868, 87.8550),
-    # Union Territories
     ("Andaman & Nicobar Islands", 11.7401, 92.6586),
     ("Chandigarh",             30.7333, 76.7794),
     ("Dadra & Nagar Haveli",   20.1809, 73.0169),
@@ -45,12 +41,9 @@ INDIA_COORDS = [
     ("Lakshadweep",            10.5667, 72.6417),
     ("Puducherry",             11.9416, 79.8083),
 ]
-
-# Regional classifications for proxy logic
 HILL_STATES = ["Uttarakhand", "Himachal Pradesh", "Sikkim", "Arunachal Pradesh", "Mizoram", "Manipur", "Meghalaya", "Nagaland"]
 COASTAL_STATES = ["Andhra Pradesh", "Goa", "Gujarat", "Karnataka", "Kerala", "Maharashtra", "Odisha", "Tamil Nadu", "West Bengal", "Andaman & Nicobar Islands", "Lakshadweep", "Puducherry"]
 SEISMIC_ZONES = ["Uttarakhand", "Himachal Pradesh", "Jammu & Kashmir", "Ladakh", "Gujarat", "Bihar", "Andaman & Nicobar Islands"]
-
 def fetch_weather(region_data):
     region, lat, lon = region_data
     url = "https://api.openweathermap.org/data/2.5/weather"
@@ -65,9 +58,7 @@ def fetch_weather(region_data):
         return region, lat, lon, response.json()
     except Exception:
         return region, lat, lon, None
-
 def calculate_disaster_risk():
-    # Initialize risk categories
     risks = {
         "flood":      {"areas": [], "max": 20},
         "heatwave":   {"areas": [], "max": 20},
@@ -78,76 +69,56 @@ def calculate_disaster_risk():
         "tsunami":    {"areas": [], "max": 20},
         "earthquake": {"areas": [], "max": 20},
     }
-
     state_risks = {}
-
-    # Parallel fetch
     with ThreadPoolExecutor(max_workers=12) as executor:
         futures = {executor.submit(fetch_weather, coord): coord for coord in INDIA_COORDS}
         results = [f.result() for f in as_completed(futures)]
-
     for region, lat, lon, data in results:
         if data is None or "main" not in data:
             continue
-            
         temp     = data["main"]["temp"]
         humidity = data["main"].get("humidity", 50)
         pressure = data["main"].get("pressure", 1013)
         wind     = data.get("wind", {}).get("speed", 0)
         rain     = data.get("rain", {}).get("3h", 0)
         clouds   = data.get("clouds", {}).get("all", 0)
-
         current_state_risks = {}
-        
-        # 🟢 1. Flood
         f_risk = 20
         if rain > 5 or clouds > 85:
             f_risk = min(95, 60 + (rain * 2) + (clouds / 10))
             risks["flood"]["areas"].append(region)
             risks["flood"]["max"] = max(risks["flood"]["max"], f_risk)
         current_state_risks["flood"] = f_risk
-
-        # 🟢 2. Heatwave
         h_risk = 20
         if temp > 32:
             h_risk = min(98, 40 + (temp - 30) * 5)
             risks["heatwave"]["areas"].append(region)
             risks["heatwave"]["max"] = max(risks["heatwave"]["max"], h_risk)
         current_state_risks["heatwave"] = h_risk
-
-        # 🟢 3. Cyclone
         c_risk = 20
         if wind > 10:
             c_risk = min(95, 30 + (wind * 3))
             risks["cyclone"]["areas"].append(region)
             risks["cyclone"]["max"] = max(risks["cyclone"]["max"], c_risk)
         current_state_risks["cyclone"] = c_risk
-
-        # 🟢 4. Wildfire (Temperature > 38 + Humidity < 20 + Wind > 5)
         wf_risk = 20
         if temp > 36 and humidity < 30:
             wf_risk = min(95, 40 + (temp - 35) * 4 + (30 - humidity))
             risks["wildfire"]["areas"].append(region)
             risks["wildfire"]["max"] = max(risks["wildfire"]["max"], wf_risk)
         current_state_risks["wildfire"] = wf_risk
-
-        # 🟢 5. Drought (Temperature > 35 + Humidity < 25 + No Rain)
         dr_risk = 20
         if temp > 34 and humidity < 25 and rain < 0.1:
             dr_risk = min(95, 50 + (temp - 34) * 3 + (25 - humidity))
             risks["drought"]["areas"].append(region)
             risks["drought"]["max"] = max(risks["drought"]["max"], dr_risk)
         current_state_risks["drought"] = dr_risk
-
-        # 🟢 6. Landslide (Heavy Rain + Hill State)
         ls_risk = 20
         if rain > 10 and region in HILL_STATES:
             ls_risk = min(95, 50 + (rain * 3))
             risks["landslide"]["areas"].append(region)
             risks["landslide"]["max"] = max(risks["landslide"]["max"], ls_risk)
         current_state_risks["landslide"] = ls_risk
-
-        # 🟢 7. Tsunami (Extreme Wind/Pressure Flux + Coastal)
         ts_risk = 10
         if region in COASTAL_STATES:
             if wind > 20 or pressure < 1000:
@@ -155,29 +126,21 @@ def calculate_disaster_risk():
                 risks["tsunami"]["areas"].append(region)
                 risks["tsunami"]["max"] = max(risks["tsunami"]["max"], ts_risk)
         current_state_risks["tsunami"] = ts_risk
-
-        # 🟢 8. Earthquake (ML Model Prediction)
         try:
             magnitude = estimate_magnitude_trend(lat, lon)
-            # Map magnitude to a 0-100% risk score (e.g. Magnitude 5.6 -> ~59% risk)
             eq_risk = min(98, max(5, (magnitude - 3.0) * 15 + 20))
             if eq_risk >= 30:
                 risks["earthquake"]["areas"].append(region)
             risks["earthquake"]["max"] = max(risks["earthquake"]["max"], eq_risk)
         except Exception:
-            # Fallback to static simulation if ML fails
             eq_risk = 15
             if region in SEISMIC_ZONES:
                 eq_risk = 40 + random.uniform(0, 10)
                 risks["earthquake"]["areas"].append(region)
                 risks["earthquake"]["max"] = max(risks["earthquake"]["max"], eq_risk)
-        
         current_state_risks["earthquake"] = eq_risk
-
-        # Final per-state determination (for map markers)
         primary = max(current_state_risks, key=current_state_risks.get)
         final_risk = current_state_risks[primary]
-        
         state_risks[region] = {
             "risk": round(final_risk, 1),
             "primary": "safe" if final_risk <= 25 else primary,
@@ -185,26 +148,15 @@ def calculate_disaster_risk():
             "wind": round(wind, 1),
             "rain": round(rain, 1),
         }
-
-    # --- LOGICAL DASHBOARD STATS CALCULATION ---
-    # 1. Active Alerts: Count of states where risk >= 70
     active_alerts = sum(1 for v in state_risks.values() if v['risk'] >= 70)
-    
-    # 2. Regions Monitored: How many regions successfully returned data
     successful_fetches = len(state_risks)
     total_regions = len(INDIA_COORDS)
-    
-    # 3. Prediction Accuracy: Base 92.5%, minus penalty for failed API requests, plus minor live fluctuation
     base_accuracy = 92.5
-    data_quality_penalty = ((total_regions - successful_fetches) / total_regions) * 15  # Up to 15% drop if data is missing
+    data_quality_penalty = ((total_regions - successful_fetches) / total_regions) * 15  
     live_fluctuation = random.uniform(-0.8, 0.8)
     accuracy_rate = round(base_accuracy - data_quality_penalty + live_fluctuation, 1)
-    accuracy_rate = min(99.9, max(0.0, accuracy_rate)) # Clamp between 0-99.9%
-    
-    # 4. Data Points/Hour: (5 weather metrics per region) * (6 polls per hour)
-    # Assumes we track temp, humidity, pressure, wind, rain.
+    accuracy_rate = min(99.9, max(0.0, accuracy_rate)) 
     data_points = successful_fetches * 5 * 6
-
     return {
         "flood":      {"areas": risks["flood"]["areas"]      or ["No major risk"], "risk": round(risks["flood"]["max"], 1)},
         "heatwave":   {"areas": risks["heatwave"]["areas"]   or ["No major risk"], "risk": round(risks["heatwave"]["max"], 1)},

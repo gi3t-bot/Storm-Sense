@@ -1,10 +1,8 @@
 import joblib
 import pandas as pd
-
 try:
     flood_means = joblib.load("StormSense/ml/flood_feature_means.pkl")
     cyclone_means = joblib.load("StormSense/ml/cyclone_feature_means.pkl")
-
     print(
         "Flood Features (type {}, len {}): {}".format(
             type(flood_means),

@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
@@ -12,8 +11,6 @@ body {
     position: relative;
     overflow-x: hidden;
 }
-
-/* Animated background particles */
 body::before {
     content: '';
     position: fixed;
@@ -28,8 +25,6 @@ body::before {
     pointer-events: none;
     z-index: 0;
 }
-
-/* PRELOADER */
 #preloader {
     position: fixed;
     z-index: 9999;
@@ -44,12 +39,10 @@ body::before {
     transition: opacity 0.7s cubic-bezier(0.77, 0, 0.175, 1);
     pointer-events: none;   
 }
-
 .preloader-content {
     text-align: center;
     animation: fadeInScale 0.8s ease-out;
 }
-
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -60,7 +53,6 @@ body::before {
         transform: scale(1);
     }
 }
-
 .preloader-content h1 {
     background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #ff6348 100%);
     -webkit-background-clip: text;
@@ -73,13 +65,10 @@ body::before {
     filter: drop-shadow(0 4px 8px rgba(255, 107, 107, 0.3));
     animation: pulse 2s ease-in-out infinite;
 }
-
 @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
 }
-
-/* Enhanced pulsing loader */
 .preloader-loader {
     width: 80px;
     height: 80px;
@@ -89,7 +78,6 @@ body::before {
     background: linear-gradient(135deg, #ff6b6b, #feca57);
     animation: loaderSpin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
-
 .preloader-loader::before {
     content: '';
     position: absolute;
@@ -102,19 +90,15 @@ body::before {
     border-top-color: #ff9ff3;
     animation: loaderSpinReverse 1s linear infinite;
 }
-
 @keyframes loaderSpin {
     0% { transform: rotate(0deg) scale(1); box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);}
     50% { transform: rotate(180deg) scale(1.1); box-shadow: 0 0 40px rgba(255, 159, 243, 0.5);}
     100% { transform: rotate(360deg) scale(1); box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);}
 }
-
 @keyframes loaderSpinReverse {
     from { transform: rotate(360deg); }
     to { transform: rotate(0deg); }
 }
-
-/* Hero Section */
 .hero {
     position: relative;
     height: 80vh;
@@ -129,8 +113,6 @@ body::before {
     border-bottom-right-radius: 50px;
     box-shadow: 0 15px 50px rgba(255, 107, 107, 0.2);
 }
-
-/* Animated background effect */
 .hero::before {
     content: '';
     position: absolute;
@@ -143,12 +125,10 @@ body::before {
     animation: moveBackground 20s linear infinite;
     opacity: 0.5;
 }
-
 @keyframes moveBackground {
     from { transform: translate(0, 0); }
     to { transform: translate(50px, 50px); }
 }
-
 .hero-content {
     z-index: 2;
     position: relative;
@@ -163,7 +143,6 @@ body::before {
     border: 2px solid rgba(255, 255, 255, 0.6);
     animation: heroFadeIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
 @keyframes heroFadeIn {
     from { 
         opacity: 0; 
@@ -174,7 +153,6 @@ body::before {
         transform: translateY(0); 
     }
 }
-
 .hero-content h1 {
     background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #ff6348 100%);
     -webkit-background-clip: text;
@@ -187,7 +165,6 @@ body::before {
     filter: drop-shadow(0 5px 15px rgba(255, 107, 107, 0.3));
     animation: slideInUp 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
 .hero-content p {
     font-size: 1.25rem;
     font-weight: 500;
@@ -196,7 +173,6 @@ body::before {
     color: #34495e;
     animation: slideInUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.15s both;
 }
-
 .cta-button {
     display: inline-block;
     padding: 1.2rem 3rem;
@@ -216,7 +192,6 @@ body::before {
     overflow: hidden;
     animation: slideInUp 1.4s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
 }
-
 .cta-button::before {
     content: '';
     position: absolute;
@@ -227,24 +202,18 @@ body::before {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     transition: left 0.5s;
 }
-
 .cta-button:hover::before {
     left: 100%;
 }
-
 .cta-button:hover, .cta-button:focus {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 15px 40px rgba(254, 202, 87, 0.5);
     background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
 }
-
 @keyframes slideInUp {
     from { opacity: 0; transform: translateY(60px);}
     to { opacity: 1; transform: translateY(0);}
 }
-
-/* --- WEATHER SECTION --- */
-
 .app {
     text-align: center;
     margin: -80px auto 3rem auto;
@@ -264,12 +233,10 @@ body::before {
     position: relative;
     z-index: 10;
 }
-
 .app.slide-in {
     opacity: 1;
     transform: translateY(0);
 }
-
 .search-box {
     position: relative;
     padding: 2rem 2rem 1.5rem 2rem;
@@ -279,7 +246,6 @@ body::before {
     background: rgba(255, 236, 210, 0.5);
     border-radius: 25px 25px 0 0;
 }
-
 input[type="text"] {
     padding: 1rem 1.5rem;
     width: 100%;
@@ -293,17 +259,14 @@ input[type="text"] {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.1);
 }
-
 input[type="text"]::placeholder {
     color: rgba(44, 62, 80, 0.5);
 }
-
 input[type="text"]:focus {
     border: 2px solid #ff6b6b;
     box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
     transform: translateY(-2px);
 }
-
 button {
     padding: 1rem 2.2rem;
     margin-left: 0;
@@ -319,7 +282,6 @@ button {
     position: relative;
     overflow: hidden;
 }
-
 button::before {
     content: '';
     position: absolute;
@@ -332,19 +294,15 @@ button::before {
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
 }
-
 button:hover::before {
     width: 300px;
     height: 300px;
 }
-
 button:hover {
     background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(254, 202, 87, 0.5);
 }
-
-/* Weather panel */
 .weather-box {
     margin-top: 0;
     background: linear-gradient(135deg, rgba(255, 236, 210, 0.4) 0%, rgba(252, 182, 159, 0.4) 100%);
@@ -354,7 +312,6 @@ button:hover {
     text-align: center;
     position: relative;
 }
-
 .weather-box::before {
     content: '';
     position: absolute;
@@ -364,7 +321,6 @@ button:hover {
     height: 2px;
     background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.5), transparent);
 }
-
 .weather-box h2 {
     font-size: 2.4rem;
     letter-spacing: 1px;
@@ -375,7 +331,6 @@ button:hover {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 .weather-box img {
     width: 120px;
     margin: 1.5rem auto;
@@ -383,53 +338,42 @@ button:hover {
     filter: drop-shadow(0 10px 20px rgba(255, 107, 107, 0.2));
     animation: float 3s ease-in-out infinite;
 }
-
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
-
-/* Enhanced Weather Themes */
 .app.sunny .weather-box {
     background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
     color: #2c3e50;
 }
-
 .app.sunny .weather-box h2 {
     background: linear-gradient(135deg, #e17055, #d63031);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 .app.cloudy .weather-box {
     background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
     color: #2d3436;
 }
-
 .app.rainy .weather-box {
     background: linear-gradient(135deg, #a29bfe 0%, #74b9ff 100%);
     color: #2d3436;
 }
-
 .app.storm .weather-box {
     background: linear-gradient(135deg, #636e72 0%, #2d3436 100%);
     color: #dfe6e9;
 }
-
 .app.snow .weather-box {
     background: linear-gradient(135deg, #ffffff 0%, #dfe6e9 100%);
     color: #2d3436;
 }
-
 .app.snow .weather-box h2 {
     background: linear-gradient(135deg, #74b9ff, #0984e3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
-/* Info lines */
 .info {
     font-size: 1.15rem;
     margin-top: 12px;
@@ -437,7 +381,6 @@ button:hover {
     text-align: center;
     font-weight: 500;
 }
-
 .alert {
     margin-top: 25px;
     padding: 1rem;
@@ -448,8 +391,6 @@ button:hover {
     border-radius: 10px;
     border: 1px solid rgba(255, 107, 107, 0.3);
 }
-
-/* Dashboard Section */
 .dashboard {
     padding: 100px 30px 80px;
     width: 100%;
@@ -461,7 +402,6 @@ button:hover {
     box-shadow: none;
     position: relative;
 }
-
 .section-title {
     text-align: center;
     font-size: 3rem;
@@ -474,7 +414,6 @@ button:hover {
     letter-spacing: 2px;
     animation: titleFadeIn 1s ease-out;
 }
-
 @keyframes titleFadeIn {
     from {
         opacity: 0;
@@ -485,14 +424,12 @@ button:hover {
         transform: translateY(0);
     }
 }
-
 .disaster-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     margin-bottom: 60px;
 }
-
 .disaster-card {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(15px);
@@ -504,7 +441,6 @@ button:hover {
     position: relative;
     overflow: hidden;
 }
-
 .disaster-card::before {
     content: '';
     position: absolute;
@@ -516,17 +452,14 @@ button:hover {
     transition: left 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 1;
 }
-
 .disaster-card:hover::before {
     left: 100%;
 }
-
 .disaster-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 50px rgba(255, 107, 107, 0.25);
     border-color: rgba(255, 107, 107, 0.5);
 }
-
 .disaster-icon {
     width: 70px;
     height: 70px;
@@ -534,7 +467,6 @@ button:hover {
     font-size: 3.5rem;
     filter: drop-shadow(0 5px 15px rgba(255, 107, 107, 0.2));
 }
-
 .disaster-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -545,7 +477,6 @@ button:hover {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 .risk-level {
     display: inline-block;
     padding: 8px 20px;
@@ -558,19 +489,15 @@ button:hover {
     box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
     text-transform: uppercase;
 }
-
 .risk-high {
     background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
 }
-
 .risk-medium {
     background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
 }
-
 .risk-low {
     background: linear-gradient(135deg, #55efc4 0%, #81ecec 100%);
 }
-
 .progress-bar {
     width: 100%;
     height: 12px;
@@ -580,7 +507,6 @@ button:hover {
     margin: 20px 0;
     box-shadow: 0 2px 10px rgba(255, 107, 107, 0.1) inset;
 }
-
 .progress-fill {
     height: 100%;
     border-radius: 10px;
@@ -589,14 +515,11 @@ button:hover {
     animation: progressShine 2s ease-in-out infinite;
     box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
 }
-
 @keyframes progressShine {
     0% { filter: brightness(1); }
     50% { filter: brightness(1.2); }
     100% { filter: brightness(1); }
 }
-
-/* Map Section */
 .map-section {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 30px;
@@ -606,7 +529,6 @@ button:hover {
     text-align: center;
     border: 2px solid rgba(255, 182, 193, 0.3);
 }
-
 .world-map {
     width: 100%;
     max-width: 900px;
@@ -621,7 +543,6 @@ button:hover {
     justify-content: center;
     box-shadow: 0 15px 40px rgba(129, 195, 215, 0.3);
 }
-
 .map-marker {
     position: absolute;
     width: 25px;
@@ -634,7 +555,6 @@ button:hover {
     z-index: 30;
     box-shadow: 0 5px 15px rgba(255, 107, 107, 0.5);
 }
-
 @keyframes markerPulse {
     0% {
         box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
@@ -649,19 +569,16 @@ button:hover {
         transform: scale(1);
     }
 }
-
 .marker-1 { top: 28%; left: 19%; }
 .marker-2 { top: 52%; left: 46%; }
 .marker-3 { top: 62%; left: 72%; }
 .marker-4 { top: 39%; left: 61%; }
-
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 60px;
 }
-
 .stat-card {
     backdrop-filter: blur(15px);
     padding: 30px 20px;
@@ -672,13 +589,10 @@ button:hover {
     box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
     transition: all 0.3s ease;
 }
-
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(255, 107, 107, 0.25);
 }
-
-/* Footer */
 .site-footer {
     width: 90%;
     max-width: 1200px;
@@ -701,14 +615,12 @@ button:hover {
     border: 2px solid rgba(255, 182, 193, 0.3);
     backdrop-filter: blur(15px);
 }
-
 .site-footer p {
     margin: 8px 0;
     line-height: 1.7;
     color: #2c3e50;
     max-width: 800px;
 }
-
 .site-footer .footer-links {
     margin-top: 20px;
     display: flex;
@@ -716,7 +628,6 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .site-footer .footer-links a {
     background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
     -webkit-background-clip: text;
@@ -727,7 +638,6 @@ button:hover {
     transition: all 0.3s ease;
     position: relative;
 }
-
 .site-footer .footer-links a::after {
     content: '';
     position: absolute;
@@ -738,13 +648,10 @@ button:hover {
     background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
     transition: width 0.3s ease;
 }
-
 .site-footer .footer-links a:hover::after,
 .site-footer .footer-links a:focus::after {
     width: 100%;
 }
-
-/* Map page specific styles */
 .map-page-container {
     width: 100%;
     display: flex;
@@ -754,7 +661,6 @@ button:hover {
     margin-bottom: 60px;
     padding: 0 20px;
 }
-
 .world-map-full {
     position: relative;
     display: flex;
@@ -770,7 +676,6 @@ button:hover {
     border: 2px solid rgba(255, 182, 193, 0.3);
     backdrop-filter: blur(15px);
 }
-
 .map-of-india-full {
     display: block;
     max-width: 100%;
@@ -780,11 +685,9 @@ button:hover {
     box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
     object-fit: contain;
 }
-
 body.dashboard-page {
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ffeaa7 100%);
 }
-
 #india-map {
     width: 100%;
     max-width: 1200px;
@@ -794,38 +697,30 @@ body.dashboard-page {
     overflow: hidden;
     border: 2px solid rgba(255, 182, 193, 0.3);
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 3rem;
     }
-    
     .hero-content p {
         font-size: 1.1rem;
     }
-    
     .section-title {
         font-size: 2.2rem;
     }
-    
     .disaster-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
-    
     .app {
         margin: -60px 20px 2rem 20px;
     }
 }
-
 @media (max-width: 900px) {
     .world-map-full {
         max-width: 98vw;
         min-width: 0;
         padding: 15px;
     }
-    
     .map-of-india-full {
         max-height: 60vh;
     }
